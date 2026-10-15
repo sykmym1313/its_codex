@@ -1,0 +1,18 @@
+id: week2_shipping_fee
+title: 배송비 계산 경계값 버그 수정
+language: python
+starter_repository: starter_repo
+public_tests: starter_repo/tests/test_shipping.py
+requirements: REQUIREMENTS.md
+verification:
+  working_directory: starter_repo
+  command: python -m pytest -q
+  expected_output: 7 passed
+constraints:
+  - shipping.py의 함수 구현만 수정한다.
+  - 함수 이름과 매개변수를 유지한다.
+  - 테스트, 요구사항, pytest 설정을 변경하지 않는다.
+acceptance_criteria:
+  - 30000원 미만 주문의 배송비는 3000원이다.
+  - 30000원 이상 주문의 배송비는 0원이다.
+  - 공개 테스트 7개가 모두 통과한다.
