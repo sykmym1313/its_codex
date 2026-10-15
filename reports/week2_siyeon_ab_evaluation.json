@@ -1,0 +1,38 @@
+{
+  "base_commit": "ea01ed387991dc48a1ea6e5072cbfadf3fab26be",
+  "initial_branch": "week2_siyeon_a",
+  "initial_uncommitted_changes": false,
+  "evaluation_python_version": "3.12.14",
+  "evaluation_pytest_version": "8.3.5",
+  "evaluation_command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
+  "baseline": {
+    "summary": "1 failed, 6 passed in 0.22s",
+    "exit_code": 1,
+    "failed_test": "tests/test_shipping.py::test_calculate_shipping_fee[exact-threshold]"
+  },
+  "results": {
+    "A": {
+      "fix_commit": "6779bf0334cf189571a3d18d68f44069ac0d34b7",
+      "evaluator_summary": "7 passed in 0.06s",
+      "evaluator_exit_code": 0,
+      "diff": "diff --git a/shipping.py b/shipping.py\nindex 2d6497f..ddda7cc 100644\n--- a/shipping.py\n+++ b/shipping.py\n@@ -3,6 +3,6 @@\n \n def calculate_shipping_fee(order_amount: int) -> int:\n     \"\"\"0 이상의 정수 주문 금액(원)을 받아 배송비(원)를 반환한다.\"\"\"\n-    if order_amount > 30_000:\n+    if order_amount >= 30_000:\n         return 0\n     return 3_000",
+      "numstat": "1\t1\tshipping.py",
+      "protected_files_diff": "",
+      "test_blob": "926b2eaf579eae01b2e4b3e98f31005f8b2eecfc"
+    },
+    "B": {
+      "fix_commit": "150ab471e21f7be770f4a5cae769889a54e6c062",
+      "evaluator_summary": "7 passed in 0.02s",
+      "evaluator_exit_code": 0,
+      "diff": "diff --git a/shipping.py b/shipping.py\nindex 2d6497f..ddda7cc 100644\n--- a/shipping.py\n+++ b/shipping.py\n@@ -3,6 +3,6 @@\n \n def calculate_shipping_fee(order_amount: int) -> int:\n     \"\"\"0 이상의 정수 주문 금액(원)을 받아 배송비(원)를 반환한다.\"\"\"\n-    if order_amount > 30_000:\n+    if order_amount >= 30_000:\n         return 0\n     return 3_000",
+      "numstat": "1\t1\tshipping.py",
+      "protected_files_diff": "",
+      "test_blob": "926b2eaf579eae01b2e4b3e98f31005f8b2eecfc"
+    }
+  },
+  "baseline_test_blob": "926b2eaf579eae01b2e4b3e98f31005f8b2eecfc",
+  "main_commit": "ea01ed387991dc48a1ea6e5072cbfadf3fab26be",
+  "week2_siyeon_commit": "ea01ed387991dc48a1ea6e5072cbfadf3fab26be",
+  "a_b_shipping_diff": "",
+  "note": "Evaluation summaries transcribed from actual evaluator command outputs; Git fields captured directly after both runs."
+}
